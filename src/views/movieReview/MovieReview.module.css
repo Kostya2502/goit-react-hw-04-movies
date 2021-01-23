@@ -1,0 +1,14 @@
+.desc {
+  margin: 0;
+  padding: 15px;
+  font-weight: 400;
+}
+
+.title {
+  font-size: 25px;
+  color: rgb(32, 62, 196);
+}
+
+.item {
+  list-style: none;
+}
