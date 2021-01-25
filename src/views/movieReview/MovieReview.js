@@ -14,7 +14,6 @@ export default function MovieReview({ movieId }) {
         <div>
             {reviews.length > 0 ? (
                 <>
-                    {/* nnnnnnnn className={list}*/}
                     <ul >
                         {reviews.map((element, index) => (
                             <li key={index} className={item}>

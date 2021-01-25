@@ -25,8 +25,6 @@ export function fetchActorsMovies(id) {
     return fetchWithErrorHandling(`${BaseURL}/movie/${id}/credits?api_key=${KEY}&language=en-US`)
 }
 
-// удалить page_1 ?
-
 export function fetchReviewsMovies(id) {
     return fetchWithErrorHandling(`${BaseURL}/movie/${id}/reviews?api_key=${KEY}&language=en-US&page=1`)
 }

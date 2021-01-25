@@ -10,7 +10,6 @@ const MovieReview = lazy(() => import('../movieReview/MovieReview' /* webpackChu
 const MovieDetailed = () => {
     const history = useHistory();
     const location = useLocation();
-    // console.log(location);
     const { movieId } = useParams();
     const [movie, setMovie] = useState(null);
     const { url, path } = useRouteMatch();

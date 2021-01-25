@@ -23,11 +23,9 @@ const SearchBar = ({ onClick }) => {
 
     return (
         <>
-            {/* <header className="Searchbar"></header> */}
             <header className={Searchbar}>
                 <form onSubmit={handleClick} className={SearchForm}>
                     <button type="submit" className={SearchFormButton}>
-                        {/*  delete */}
                         <ImSearch />
                     </button>
                     <input

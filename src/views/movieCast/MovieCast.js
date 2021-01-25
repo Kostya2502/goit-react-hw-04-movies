@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { fetchActorsMovies, ImageURL } from '../../api/api';
-// import { fetchMovieCast, IMAGE_URL } from '../../services/movies-api';
 import { list, item, name } from './MovieCast.module.css';
 
 

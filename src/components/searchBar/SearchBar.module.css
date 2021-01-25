@@ -6,7 +6,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* min-height: 64px; */
   padding-right: 24px;
   padding-left: 24px;
   padding-top: 12px;
@@ -44,19 +43,6 @@
 
 .SearchFormButton:hover {
   opacity: 1;
-}
-
-/* delete  SearchFormButtonLabel*/
-.SearchFormButtonLabel {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  clip-path: inset(50%);
-  border: 0;
 }
 
 .SearchFormInput {
