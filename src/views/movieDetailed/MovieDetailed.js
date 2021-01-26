@@ -8,11 +8,14 @@ const MovieCast = lazy(() => import('../movieCast/MovieCast' /* webpackChunkName
 const MovieReview = lazy(() => import('../movieReview/MovieReview' /* webpackChunkName: "MovieReview" */),);
 
 const MovieDetailed = () => {
+
     const history = useHistory();
     const location = useLocation();
     const { movieId } = useParams();
     const [movie, setMovie] = useState(null);
     const { url, path } = useRouteMatch();
+    const [state, setState] = useState({})
+
 
     useEffect(() => {
         fetchDetailsMovies(movieId)
@@ -21,9 +24,18 @@ const MovieDetailed = () => {
             });
     }, [movieId]);
 
+    useEffect(() => {
+        if (location.state) { setState({ ...location.state }) }
+        console.log(location);
+    }, []);
+
     const onGoBack = () => {
-        history.push(location?.state?.from ?? '/');
+        if (state.query) {
+            history.push({ pathname: state.from, search: `?query=${state.query}`, state: { query: state.query } });
+        } else history.push('/');
+        // history.push(location?.state?.from ?? '/');
     };
+
 
     return (
         <>
@@ -62,6 +74,10 @@ const MovieDetailed = () => {
                         <nav>
                             <NavLink
                                 to={`${url}/cast`}
+                                // to={{
+                                //     pathname: `${url}/cast`,
+                                //     state: { from: location.state ? location.state.from : '/' },
+                                // }}
                                 className={link}
                                 activeClassName={activeLink}
                             >
@@ -69,6 +85,10 @@ const MovieDetailed = () => {
             </NavLink>
                             <NavLink
                                 to={`${url}/reviews`}
+                                // to={{
+                                //     pathname: `${url}/reviews`,
+                                //     state: { from: location.state ? location.state.from : '/' },
+                                // }}
                                 className={link}
                                 activeClassName={activeLink}
                             >
@@ -95,3 +115,25 @@ const MovieDetailed = () => {
 };
 
 export default MovieDetailed;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

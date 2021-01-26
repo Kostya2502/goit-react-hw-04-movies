@@ -2,7 +2,7 @@ import { list, item, title, subtitle, image } from './MovieList.module.css';
 import { Link, useLocation } from 'react-router-dom';
 import { ImageURL } from '../../api/api';
 
-const MovieList = ({ movies }) => {
+const MovieList = ({ movies, query }) => {
     const location = useLocation()
     return (
         <>
@@ -11,7 +11,7 @@ const MovieList = ({ movies }) => {
                     <li key={movie.id} className={item}>
                         <Link to={{
                             pathname: `/movies/${movie.id}`,
-                            state: { from: location },
+                            state: { from: location.pathname, query },
                         }} className={title}>
                             <img
                                 className={image}
